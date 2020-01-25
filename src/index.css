@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:after,
+:before{
+  box-sizing: border-box;
+}
+/*Create colors */
+:root{
+  --primary: #3fa05c;
+  --secondary: #c8ff30;
+  --secondary-light: #bd66;
+  --white: #fff
+}
+/*set up the font, line-height
+and remove padding and marging
+from body*/
+body{
+  font-family: 'Franklin Gothic Medium';
+  line-height: 1.5;
+  margin:0;
+  padding: 0 1rem;
+}
+/* set the button styles, color, font size
+padding and no to grow*/
+button{
+  background-color: var(--primary);
+  border: 0;
+  color: var(--white);
+  flex-grow: 0;
+  font-size:1.2rem;
+  line-height:1;
+  padding: 0.75rem 1rem;
+  text-transform: Uppercase;
+}
+/*add margins n the left of button*/
+button + button,
+input + button{
+  margin-left: 2.5px;
+}
+form{
+  padding: 1rem 0;
+}
+/*provide input grow and set the style*/
+input{
+
+  background-color: var(--secondary-light);
+  border: 2px sold var(--secondary);
+  color: var(--white);
+  flex-grow: 1;
+  font-size: 1.3rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+/* Set the color of the placeholder text */
+input::placeholder {
+  color: var(--white);
+}
+/*Change input background when hovered or focused
+and remove default outline*/
+input:focus,
+input:hover {
+  background-color: var(--secondary);
+  outline: 0;
+}
+/*we will display flex to align items
+*/
+.form-horizontal{
+  align-items: center;
+  display:flex
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* we will apply media query for mobile 
+display
+when browser is 600 px wide*/
+@media (min-width: 600px) {
+  button + button,
+  input + button {
+    margin-left: 1rem;
+  }
+  }
+
+img {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  button + button,
+  input + button {
+    margin-left: 1rem;
+  }
+
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1000px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1400px) {
+  .gallery {
+    column-count: 4;
+  }
 }
