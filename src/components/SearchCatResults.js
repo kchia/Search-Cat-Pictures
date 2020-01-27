@@ -1,22 +1,19 @@
 import React from 'react';
 
-
-    function SearchCatResults(props) {
+function SearchCatResults(props) {
   const { images } = props;
-    if (!images.length) {
-return <h2>No Images Found!</h2>;
+  if (!images.length) {
+    return <h2>No Images Found!</h2>;
   }
-return (
+  return (
     <div className="gallery">
-        {images.map(image => (
+      {images.map(image => (
         <div key={image.id} className="gif">
-     <img src={image.images.downsized_large.url} />
+          <img src={image.url} />
         </div>
-        ))}
+      ))}
     </div>
   );
-
 }
-
 
 export default SearchCatResults;

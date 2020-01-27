@@ -1,43 +1,63 @@
 import React, { useState, useEffect } from 'react';
-
-
 import SearchCatForm from './components/SearchCatForm';
 import SearchCatResults from './components/SearchCatResults';
+import SearchHeader from './components/SearchHeader';
 
 function App() {
   const searchOptions = {
-    key: process.env.REACT_APP_HEADER,
-    limit: 25,
-    rating: 'G',
-    api: 'https://thecatapi.com/v1/images',
+    key: process.env.REACT_APP_CAT_API,
+    limit: 10,
+    api: 'https://api.thecatapi.com/v1/images',
     endpoint: '/search'
   };
 
   const [images, setImages] = useState([]);
-  // const [searchString, setSearchString]=useState('cats');
-  // const [lastSearch, setlastSearch]=useState('');
+  const [searchString, setSearchString] = useState('beng');
+  const [lastSearch, setLastSearch] = useState('');
 
   useEffect(() => {
-    getImages();
+    getImages(searchString);
   }, []);
 
-  function getImages() {
-    const searchString = 'breed';
+  function getImages(searchString) {
     /* Build a URL from the searchOptions object */
-    const url = `${searchOptions.api}${searchOptions.endpoint}?api_key=${searchOptions.key}&q=${searchString} &limit=${searchOptions.limit}&offset=${searchOptions.offset}&rating=${searchOptions.rating}&lang=en`;
+    const url = `${searchOptions.api}${searchOptions.endpoint}?breed_ids=${searchString}&limit=${searchOptions.limit}`;
 
-    fetch(url)
+    fetch(url, {
+      method: 'get',
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Credentials': true
+      }
+    })
       .then(response => response.json())
       .then(response => {
-        setImages(response.data);
+        setImages(response);
+        setLastSearch(searchString);
+        setSearchString('')
+        console.log('databk', response);
       })
       .catch(console.error);
   }
-  // function App (){
+
+  function handleChange(event) {
+    setSearchString(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    getImages(searchString);
+  }
+
+
   return (
     <div>
-      <h1>Cat Searcher</h1>
-      <SearchCatForm />
+      <SearchHeader lastSearch={lastSearch} />
+      <SearchCatForm
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        searchString={searchString}
+      />
       {/* <SearchCatResults /> */}
       <SearchCatResults images={images} />
     </div>

@@ -67,6 +67,17 @@ input:hover {
   display:flex
 }
 
+.img-wrap{
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-wrap img{
+  width: 100%;
+  height: auto;
+}
+
 /* we will apply media query for mobile 
 display
 when browser is 600 px wide*/
