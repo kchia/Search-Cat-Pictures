@@ -10,7 +10,8 @@ function SearchHeader({ lastSearch }) {
         <h1>Cat Searcher</h1>
         <p>
           {' '}
-          Enter the first four characters of the cat breed to beguin the search. Example enter ben for bengal
+          Enter the first four characters of the cat breed to begin the search.
+          Example enter ben for bengal
           {/* <span> Example enter ben for bengal</span> */}
         </p>
       </div>

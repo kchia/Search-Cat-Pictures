@@ -12,7 +12,7 @@ function SearchCatForm(props) {
         onChange={handleChange}
         value={searchString}
       />
-      <button type="submit">Cat search </button>
+      <button type="submit">Cat Search </button>
     </form>
   );
 }
