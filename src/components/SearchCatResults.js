@@ -8,7 +8,7 @@ function SearchCatResults(props) {
   return (
     <div className="gallery">
       {images.map(image => (
-        <div key={image.id} className="gif">
+        <div id={image.id} key={image.id} className="gif">
           <img src={image.url} />
         </div>
       ))}

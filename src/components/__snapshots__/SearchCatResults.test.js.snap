@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchCatResults should render an image when passed an array of images prop 1`] = `ShallowWrapper {}`;

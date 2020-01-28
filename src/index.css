@@ -1,46 +1,48 @@
+/* This code is based on React Hook class lab*/
+
 :after,
-:before{
+:before {
   box-sizing: border-box;
 }
 /*Create colors */
-:root{
-  --primary: #3fa05c;
-  --secondary: #c8ff30;
+:root {
+  --primary: #662e14;
+  --secondary: #e5e7db;
   --secondary-light: #bd66;
-  --white: #fff
+  --white: #fff;
 }
 /*set up the font, line-height
 and remove padding and marging
 from body*/
-body{
+body {
   font-family: 'Franklin Gothic Medium';
   line-height: 1.5;
-  margin:0;
+  margin: 0;
   padding: 0 1rem;
 }
 /* set the button styles, color, font size
 padding and no to grow*/
-button{
+button {
   background-color: var(--primary);
   border: 0;
   color: var(--white);
   flex-grow: 0;
-  font-size:1.2rem;
-  line-height:1;
+  font-size: 1.2rem;
+  line-height: 1;
   padding: 0.75rem 1rem;
   text-transform: Uppercase;
 }
 /*add margins n the left of button*/
 button + button,
-input + button{
+input + button {
   margin-left: 2.5px;
+  margin-block-end: auto;
 }
-form{
+form {
   padding: 1rem 0;
 }
 /*provide input grow and set the style*/
-input{
-
+input {
   background-color: var(--secondary-light);
   border: 2px sold var(--secondary);
   color: var(--white);
@@ -60,25 +62,25 @@ input:hover {
   background-color: var(--secondary);
   outline: 0;
 }
-/*we will display flex to align items
+/*display flex to align items
 */
-.form-horizontal{
+.form-horizontal {
   align-items: center;
-  display:flex
+  display: flex;
 }
 
-.img-wrap{
+.img-wrap {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
 }
 
-.img-wrap img{
+.img-wrap img {
   width: 100%;
   height: auto;
 }
 
-/* we will apply media query for mobile 
+/* media query for mobile 
 display
 when browser is 600 px wide*/
 @media (min-width: 600px) {
@@ -86,7 +88,7 @@ when browser is 600 px wide*/
   input + button {
     margin-left: 1rem;
   }
-  }
+}
 
 img {
   margin-bottom: 1rem;
