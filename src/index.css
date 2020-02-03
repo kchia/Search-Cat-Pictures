@@ -1,3 +1,7 @@
+/* Hou comment: how would avoid using tag selectors to style your app? Can you use class selectors to style your app instead? */
+
+/* Hou comment: consider creating separate stylesheets for your components instead of putting all the CSS in one file, as it will become unscaleable over time */
+
 /* This code is based on React Hook class lab*/
 
 :after,

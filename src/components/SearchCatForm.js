@@ -1,6 +1,7 @@
 import React from 'react';
 
 function SearchCatForm(props) {
+  // Hou comment: Nice job destructuring your props here!
   const { handleSubmit, handleChange, searchString } = props;
   return (
     <form onSubmit={handleSubmit} className="form">

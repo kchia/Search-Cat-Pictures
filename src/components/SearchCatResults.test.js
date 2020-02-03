@@ -8,6 +8,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({ adapter: new Adapter() });
 //we test if there are images
+// Hou comment: Nice job writing tests for your component!
 describe('SearchCatResults', () => {
   it('should render an image when passed an array of images prop', () => {
     const images = [

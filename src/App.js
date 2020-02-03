@@ -3,6 +3,7 @@ import SearchCatForm from './components/SearchCatForm';
 import SearchCatResults from './components/SearchCatResults';
 import SearchHeader from './components/SearchHeader';
 /* setup parameters to get the images from api */
+// Hou comment: Nice job using hooks to add state to your functional components throughout your application!
 function App() {
   const searchOptions = {
     key: process.env.REACT_APP_CAT_API,
@@ -22,7 +23,7 @@ function App() {
   function getImages(searchString) {
     /* Build a URL from the searchOptions object */
     const url = `${searchOptions.api}${searchOptions.endpoint}?breed_ids=${searchString}&limit=${searchOptions.limit}`;
-//we have to add the headers per api instructions
+    //we have to add the headers per api instructions
     fetch(url, {
       method: 'get',
       headers: {
@@ -35,6 +36,7 @@ function App() {
         setImages(response);
         setLastSearch(searchString);
         setSearchString('');
+        // Hou comment: remove any console.log statements from your code
         console.log('databk', response);
       })
       .catch(console.error);
@@ -44,11 +46,11 @@ function App() {
   function onClick(event) {
     window.open('https://www.purina.com/cats/cat-breeds');
   }
-//get cat name from user 
+  //get cat name from user
   function handleChange(event) {
     setSearchString(event.target.value);
   }
-//submit cat name and get images
+  //submit cat name and get images
   function handleSubmit(event) {
     event.preventDefault();
     getImages(searchString);
@@ -65,7 +67,7 @@ function App() {
       <div className="info">
         <button onClick={onClick}> More Information</button>
       </div>
-
+      {/* Hou comment: remove unused code below */}
       {/* <SearchCatResults /> */}
       <SearchCatResults images={images} />
     </div>
